@@ -12,7 +12,7 @@
           <div class="user-navigation-wrapper">
               <form class="search">
                   <input type="search" placeholder="Поиск по сайту">
-                  <button></button>
+                  <button type="submit">Найти</button>
               </form>
               <ul class="user-navigation">
                   <li class="profile"><a href="profile.html">Валентин Петухов</a></li>
@@ -51,19 +51,63 @@
           </div>
           <section class="filters">
               <h2>Фильтр:</h2>
-              <!-- Форма -->
+              <form action="https://echo.htmlacademy.ru" method="get">
+                  <p class="price">
+                      <label for="price-range">Стоимость</label>
+                      <input class="visually-hidden" type="range" id="price-range">
+                  </p>
+                  <fieldset>
+                      <legend>Цвет</legend>
+                      <ul>
+                          <li>
+                              <input class="visually-hidden" type="checkbox" name="black" id="filter-black" checked>
+                              <label for="filter-black">Чёрный</label>
+                          </li>
+                          <li>
+                              <input class="visually-hidden" type="checkbox" name="white" id="filter-white">
+                              <label for="filter-white">Белый</label>
+                          </li>
+                          <li>
+                              <input class="visually-hidden" type="checkbox" name="blue" id="filter-blue" checked>
+                              <label for="filter-ble">Синий</label>
+                          </li>
+                          <li>
+                              <input class="visually-hidden" type="checkbox" name="red" id="filter-red" checked>
+                              <label for="filter-red">Красный</label>
+                          </li>
+                          <li>
+                              <input class="visually-hidden" type="checkbox" name="pink" id="filter-pink">
+                              <label for="filter-pink">Розовый</label>
+                          </li>
+                      </ul>
+                  </fieldset>
+                  <fieldset>
+                      <legend>Bluetooth</legend>
+                      <ul>
+                          <li>
+                              <input class="visually-hidden" type="radio" name="bluetooth" value="yes" id="filter-with-bluetooth" checked>
+                              <label for="filter-with-bluetooth">Есть</label>
+                          </li>
+                          <li>
+                              <input class="visually-hidden" type="radio" name="bluetooth" value="no" id="filter-without-bluetooth">
+                              <label for="filter-without-bluetooth">Нет</label>
+                          </li>
+                      </ul>
+                  </fieldset>
+                  <button class="button" type="submit">Показать</button>
+              </form>
           </section>
           <div class="catalog-wrapper">
               <section class="sort-by">
                   <h2>Сортировка</h2>
                   <ul class="sort-by-list">
-                      <li class="sort-by-price current">По цене</li>
-                      <li class="sort-by-type">По типу</li>
-                      <li class="sort-by-popularity">По популярности</li>
+                      <li class="sort-by-price current"><a href="#">По цене</a></li>
+                      <li class="sort-by-type"><a href="#">По типу</a></li>
+                      <li class="sort-by-popularity"><a href="#">По популярности</a></li>
                   </ul>
                   <ul class="sort-dir">
-                      <li class="dir-up"><img src="" alt="От меньшего к большему"></li>
-                      <li class="dir-down"><img src="" alt="От большего к меньшему"></li>
+                      <li class="dir-up"><a href="#"><img src="" alt="От меньшего к большему"></a></li>
+                      <li class="dir-down"><a href="#"><img src="" alt="От большего к меньшему"></a></li>
                   </ul>
               </section>
               <section class="catalog">
