@@ -30,8 +30,74 @@ a {
   text-decoration: none;
 }
 
-.page-header, .submenu {
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.page-header {
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 1160px;
+    margin: auto;
     background-color: #f7e296;
+} 
+
+.page-header-logo {
+    margin-top: -19px;
+    padding-left: 60px;
+}
+
+.user-navigation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 60px 2px;
+    margin-bottom: 30px;
+}
+
+.search {
+    width: 440px;
+    padding-bottom: 7px;
+}
+
+.user-navigation, 
+.main-catalog,
+.submenu, 
+.main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 540px;
+    margin: 0;
+}
+
+.user-navigation li {
+    margin-left: 35px;
+}
+
+.user-navigation li:first-child {
+    flex-grow: 1;
+}
+
+.search input[type="search"] {
+    background-color: #f7e296;
+    border: none;
 }
 
 .search input[type="search"]::-webkit-input-placeholder {
@@ -86,16 +152,14 @@ a {
     outline: none;
 }
 
-.user-navigation, .submenu, .main-menu {
-    list-style: none;
-}
-
-.user-navigation a, .submenu a, .main-menu a {
+.user-navigation a, 
+.submenu a, 
+.main-menu a {
     color: #000000;
 }
 
-a.main-catalog, .main-menu a {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+a.catalog-menu {
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
     text-transform: uppercase;
@@ -103,12 +167,63 @@ a.main-catalog, .main-menu a {
     color: #000000;
 }
 
-.page-header a:hover, .page-header a:focus {
+.main-menu a {
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #000000;
+}
+
+.page-header a:hover {
     color: rgba(0,0,0, 0.6);
 }
 
 .page-header a:active {
     color: rgba(0,0,0, 0.3);
+}
+
+.main-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 60px;
+    position: relative;
+}
+
+.submenu {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 1040px;
+    padding: 29px 60px 36px;
+    background-color: #f7e296;
+}
+
+.submenu-part {
+    min-width: 200px;
+}
+
+.submenu-part:first-child {
+    margin-right: 40px;
+}
+
+.main-menu {
+    display: flex;
+    justify-content: flex-start;
+    width: 540px;
+    padding: 0;
+}
+
+.main-menu li {
+    margin-left: 35px;
+}
+
+.main-menu li:last-child {
+    margin-right: -3px;
+    margin-left: auto;
 }
 
 .promo-slider-list, 
@@ -119,8 +234,16 @@ a.main-catalog, .main-menu a {
     list-style: none;
 }
 
+.main-top-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 1160px;
+    margin: auto;
+    padding: 0 20px;
+}
+
 .promo-slider-number {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 180px;
     line-height: 180px;
     color: #ffffff;
@@ -129,14 +252,14 @@ a.main-catalog, .main-menu a {
 }
 
 .promo-slider-slogan {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 47px;
     line-height: 56px;
     color: #000000;
 }
 
 .button {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
     text-transform: uppercase;
@@ -164,16 +287,29 @@ a.main-catalog, .main-menu a {
 }
 
 .promo-slider-table td {
-    font-family: Gilroy Light, Arial, sans-serif;
+    font-family: "Gilroy Light", Arial, sans-serif;
     font-size: 36px;
     line-height: 48px;
+}
+
+.popular-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    width: 1160px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.popular-list li {
+    flex-basis: 160px;
 }
 
 .popular-list img {
     background-color: rgba(240,197,46, 0.5);
 }
 
-.popular-list a:hover img, .popular-list a:focus img {
+.popular-list a:hover img {
     background-color: #f0c52e;
 }
 
@@ -182,7 +318,7 @@ a.main-catalog, .main-menu a {
 }
 
 .popular-list span {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
     color: #000000;
@@ -193,7 +329,24 @@ a.main-catalog, .main-menu a {
 }
 
 .services-slider {
+    margin: 0;
     background-color: #e5e5e5;
+    min-width: 1200px;
+}
+
+.services-wrapper {
+    display: flex;
+    width: 1160px;
+    margin: auto;
+    margin-bottom: 105px;
+    padding: 0 20px;
+}
+
+.services-slider-controls {
+    list-style: none;
+    width: 300px;
+    margin: 0;
+    padding: 0;
 }
 
 .services-slider-controls .button:active {
@@ -201,51 +354,91 @@ a.main-catalog, .main-menu a {
     color: #f7e184;
 }
 
+.services-slide {
+    width: 800px;
+}
+
 .services-slide a {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 47px;
     line-height: 48px;
     color: #000000;
 }
 
+.main-bottom-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 1160px;
+    margin: auto;
+    margin-bottom: 90px;
+    padding: 0 20px;
+}
+
+.brands-logo-list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: ;
+}
+
 .brands-logo-item img {
-     -webkit-filter: grayscale(100%);
-     -moz-filter: grayscale(100%);
-     -ms-filter: grayscale(100%);
-     -o-filter: grayscale(100%);
     filter: grayscale(100%);
     opacity: 0.2;
 }
 
-.brands-logo-item img:hover, .brands-logo-item img:focus {
-     -webkit-filter: none;
-     -moz-filter: none;
-     -ms-filter: none;
-     -o-filter: none;
+.brands-logo-item img:hover, 
+.brands-logo-item img:focus {
     filter: none;
     opacity: 1;
 }
 
+.info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
 .info-wrapper h3 {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 47px;
     line-height: 48px;
     letter-spacing: 1px;
     color: #000000;
 }
 
+.about-us {
+    width: 460px;
+}
+
 .transport {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 16px;
     line-height: 40px;
     color: #000000;
 }
 
-.page-footer {
-    background-color: #464646;
+.contacts {
+    width: 560px;
+    margin-right: 0;
 }
 
-.page-footer-logo img:hover, .page-footer-logo img:focus {
+.page-footer {
+    background-color: #464646;
+    min-width: 1200px;
+    min-height: 323px;
+    margin: 0;
+    padding: 0;
+}
+
+.page-footer-wrapper {
+    width: 1160px;
+    padding: 64px 20px 0px;
+    margin: auto;
+}
+.page-footer-logo img:hover, 
+.page-footer-logo img:focus {
     opacity: 0.6;
 }
 
@@ -253,11 +446,31 @@ a.main-catalog, .main-menu a {
     opacity: 0.3;
 }
 
+.page-footer-user-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.page-footer-logo {
+    flex-grow: 1;
+}
+
+.footer-user-navigation {
+    display: flex;
+}
+
+.footer-user-navigation li {
+    padding-left: 37px;
+}
+
 .footer-user-navigation a {
     color: rgba(255,255,255, 0.7);
 }
 
-.footer-user-navigation a:hover, .footer-user-navigation a:focus {
+.footer-user-navigation a:hover, 
+.footer-user-navigation a:focus {
     color: rgba(255,255,255, 1);
 }
 
@@ -265,16 +478,26 @@ a.main-catalog, .main-menu a {
     color: rgba(255,255,255, 0.3);
 }
 
-.page-footer-address, .page-footer-tel {
+.page-footer-contacts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-footer-address, 
+.page-footer-tel {
     color: #ffffff;
 }
 
-.page-footer-menu, .page-footer-social {
-    text-align: center;
+.page-footer-menu {
+    display: flex;
+}
+
+.page-footer-menu li {
+    padding-right: 35px;
 }
 
 .page-footer-menu a {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
     text-transform: uppercase;
@@ -290,11 +513,44 @@ a.main-catalog, .main-menu a {
     color: rgba(255,255,255, 0.3);
 }
 
+.page-footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    min-height: 35px;
+    position: relative;
+}
+
+.page-footer-links::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 7px;
+    background-color: #ffc600;
+}
+
+.page-footer-social {
+    margin-right: auto;
+    margin-left: 507px;
+    padding: 0;
+}
+
+.page-footer-social ul {
+    display: inline;
+}
+
+.page-footer-social li {
+    display: inline-block;
+}
+
 .social-button {
     background-color: rgba(255,255,255, 0.3);
 }
 
-.social-button:hover, .social-button:focus {
+.social-button:hover, 
+.social-button:focus {
     background-color: rgba(255,255,255, 0.6);
 }
 
@@ -302,7 +558,8 @@ a.main-catalog, .main-menu a {
     background-color: rgba(255,255,255, 0.1);
 }
 
-.copyright img:hover, .copyright img:focus {
+.copyright img:hover, 
+.copyright img:focus {
     opacity: 0.6;
 }
 
@@ -311,7 +568,7 @@ a.main-catalog, .main-menu a {
 }
 
 .write-us-item label {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
 }
@@ -363,7 +620,7 @@ a.main-catalog, .main-menu a {
 }
 
 .page-title {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 47px;
     line-height: 48px;
     color: #000000;
@@ -373,13 +630,20 @@ a.main-catalog, .main-menu a {
     list-style: none;
 }
 
-.breadcrumbs a, .breadcrumbs-current {
+.breadcrumbs a {
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(0,0,0, 0.3);
+} 
+
+.breadcrumbs-current {
     font-size: 14px;
     line-height: 24px;
     color: rgba(0,0,0, 0.3);
 }
 
-.breadcrumbs a:hover, .breadcrumbs a:focus {
+.breadcrumbs a:hover, 
+.breadcrumbs a:focus {
     color: rgba(0,0,0, 0.6);
 }
 
@@ -391,8 +655,17 @@ a.main-catalog, .main-menu a {
     background-color: #efefef;
 }
 
-.filters h2, .sort-by h2 {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+.filters h2 {
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #000000;
+} 
+
+.sort-by h2 {
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 3px;
@@ -406,10 +679,22 @@ a.main-catalog, .main-menu a {
     color: #000000;
 }
 
-.price label, 
-.filters legend,
+.price label {
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+} 
+
+.filters legend {
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+}
+
 .catalog-item-title a {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
     color: #000000;
@@ -429,11 +714,13 @@ a.main-catalog, .main-menu a {
     color: #a6a6a6;
 }
 
-.sort-by{
+.sort-by {
     background-color: rgba(0,0,0, 0.08);
 }
 
-.sort-by-list, .sort-dir, .catalog-list {
+.sort-by-list, 
+.sort-dir, 
+.catalog-list {
     list-style: none;
 }
 
@@ -457,7 +744,7 @@ a.main-catalog, .main-menu a {
 }
 
 .catalog-item-price {
-    font-family: Gilroy Light, Arial, sans-serif;
+    font-family: "Gilroy Light", Arial, sans-serif;
     font-size: 16px;
     line-height: 24px; 
 }
@@ -481,17 +768,19 @@ a.main-catalog, .main-menu a {
     background-color: rgba(0,0,0, 0.08);
 }
 
-.forward:hover, .backward:hover {
+.forward:hover, 
+.backward:hover {
     background-color: rgba(0,0,0, 0.08);
 }
 
-.forward:active, .backward:active {
+.forward:active, 
+.backward:active {
     background-color: rgba(0,0,0, 0.08);
     color: rgba(0,0,0, 0.3);
 }
 
 .pagination-list a {
-    font-family: Gilroy ExtraBold, Arial, sans-serif;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 16px;
     line-height: 24px;
     color: rgba(0,0,0, 0.3);
