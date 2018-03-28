@@ -50,6 +50,7 @@ a {
     display: flex;
     flex-direction: column;
     width: 1160px;
+    min-height: 186px;
     margin: auto;
     background-color: #f7e296;
 } 
@@ -159,6 +160,7 @@ a {
 }
 
 a.catalog-menu {
+    position: relative;
     font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
@@ -192,14 +194,24 @@ a.catalog-menu {
     position: relative;
 }
 
+.submenu-link {
+    position: relative;
+}
+
 .submenu {
-    display: flex;
+    display: none;
     position: absolute;
-    left: 0;
-    right: 0;
+    z-index: 2;
+    top: 24px;
+    left: -60px;
     width: 1040px;
-    padding: 29px 60px 36px;
+    min-height: 100px;
+    padding: 27px 60px 36px;
     background-color: #f7e296;
+}
+
+.submenu-link:hover .submenu {
+    display: flex;
 }
 
 .submenu-part {
@@ -240,6 +252,28 @@ a.catalog-menu {
     width: 1160px;
     margin: auto;
     padding: 0 20px;
+}
+
+.promo-slider-wrapper {
+    position: relative;
+    width: 1160px;
+    margin: auto;
+    z-index: 0;
+}
+
+.promo-slider-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 1160px;
+    height: 113px;
+    background-color: #f7e296;
+}
+
+.promo-slide {
+    position: relative;
+    z-index: 1;
 }
 
 .promo-slider-number {
