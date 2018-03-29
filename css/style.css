@@ -259,6 +259,11 @@ a.catalog-menu {
     padding: 0 20px;
 }
 
+.promo-slider {
+    position: relative;
+    margin-top: -12px;
+}
+
 .promo-slider-wrapper {
     position: relative;
     width: 1160px;
@@ -272,12 +277,12 @@ a.catalog-menu {
     top: -15px;
     left: 0;
     width: 1160px;
-    height: 113px;
+    height: 123px;
     background-color: #f7e296;
 }
 
-.promo-slider {
-    position: relative;
+.promo-slider-list {
+    padding: 0 60px;
 }
 
 .promo-slide {
@@ -290,20 +295,48 @@ a.catalog-menu {
     display: flex;
 }
 
-.promo-slider-number {
+.promo-slide::before {
     font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 180px;
     line-height: 180px;
     color: #ffffff;
-    /*Временно для наглядности */
-    background-color: #f7e296;
+    position: absolute;
+    content: "";
+    top: -15px;
+    right: -15px;
 }
 
+.promo-slide:nth-child(1)::before {
+    content: "01";
+}
+
+.promo-slide:nth-child(2)::before {
+    content: "02";
+}
+
+.promo-slide:nth-child(3)::before {
+    content: "03";
+}
+
+.promo-slide img {
+    margin-right: auto;
+    padding-left: 30px;
+}
+
+.promo-slide-info {
+    width: 501px;
+    padding-top: 76px;
+}
 .promo-slider-slogan {
     font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 47px;
     line-height: 56px;
     color: #000000;
+}
+
+.promo-slider-text {
+    margin-top: 25px;
+    margin-bottom: 50px;
 }
 
 .button {
@@ -328,6 +361,11 @@ a.catalog-menu {
     outline: none;
 }
 
+.promo-slider-table {
+    margin-top: 55px;
+    padding: 0;
+}
+
 .promo-slider-table th {
     font-size: 13px;
     line-height: 20px;
@@ -340,29 +378,29 @@ a.catalog-menu {
     line-height: 48px;
 }
 
-.popular-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; 
+.popular {
     width: 1160px;
     margin: auto;
-    padding: 0 20px;
+    padding: 0;
+    margin-top: 107px;
+}
+
+.popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
 }
 
 .popular-list li {
     flex-basis: 160px;
+    margin: 0;
+    padding: 0;
+    margin-right: 40px;
 }
 
-.popular-list img {
-    background-color: rgba(240,197,46, 0.5);
-}
-
-.popular-list a:hover img {
-    background-color: #f0c52e;
-}
-
-.popular-list a:active img {
-    opacity: 0.3;
+.popular-list li:nth-child(6n) {
+    margin-right: 0;
 }
 
 .popular-list span {
@@ -372,12 +410,40 @@ a.catalog-menu {
     color: #000000;
 }
 
-.popular-list a:active span {
+.popular-item {
+    position: relative;
+    display: block;
+    padding-top: 194px;
+}
+
+.popular-item::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -2;
+    display: block;
+    width: 160px;
+    height: 160px;
+    background-color: rgba(240, 197, 46, 0.5);
+}
+
+
+.popular-item:hover::before {
+    background-color: #f0c52e;
+}
+
+.popular-item:active::after {
+    opacity: 0.3;
+}
+
+.popular-item:active span {
     color: rgba(0,0,0, 0.3);
 }
 
 .services-slider {
     margin: 0;
+    margin-top: 183px;
     background-color: #e5e5e5;
     min-width: 1200px;
 }
@@ -404,6 +470,11 @@ a.catalog-menu {
 
 .services-slide {
     width: 800px;
+    display: none;
+}
+
+.services-slide:first-child {
+    display: flex;
 }
 
 .services-slide a {
@@ -613,6 +684,14 @@ a.catalog-menu {
 
 .copyright img:active {
     opacity: 0.3;
+}
+
+.modal-write-us {
+    display: none;
+}
+
+.modal-map {
+    display: none;
 }
 
 .write-us-item label {
