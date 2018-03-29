@@ -276,9 +276,18 @@ a.catalog-menu {
     background-color: #f7e296;
 }
 
+.promo-slider {
+    position: relative;
+}
+
 .promo-slide {
+    display: none;
     position: relative;
     z-index: 1;
+}
+
+.promo-slide:nth-child(1) {
+    display: flex;
 }
 
 .promo-slider-number {
@@ -717,12 +726,10 @@ a.catalog-menu {
 
 .inner-page-wrapper {
     display: flex;
-    min-width: 1200px;
-    margin: 0;
-    padding: 0;
 }
 
 .filters {
+    position: relative;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -734,12 +741,11 @@ a.catalog-menu {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    width: 349px;
+    width: 348px;
     min-height: 70px;
     margin-left: auto;
     padding-left: 80px;
     padding-right: 70px;
-    position: relative;
 }
 
 .filters-header::before {
@@ -761,12 +767,15 @@ a.catalog-menu {
     text-transform: uppercase;
     color: #000000;
     margin: 0;
+    padding: 0;
 } 
 
 .filters-main {
     box-sizing: border-box;
-    min-width: 349px;
+    width: 348px;
     margin-left: auto;
+    padding-top: 69px;
+    padding-right: 70px;
     padding-left: 80px;
 }
 
@@ -783,15 +792,19 @@ a.catalog-menu {
     color: #000000;
 } 
 
-.filters legend {
+.filters-main legend {
     font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
     color: #000000;
+    padding: 0;
+    margin: 0;
 }
 
-.filters fieldset {
+.filters-main fieldset {
     border: none;
+    padding: 0;
+    margin: 0;
 }
 
 .filters ul,
@@ -805,9 +818,10 @@ a.catalog-menu {
 }
 
 .catalog-wrapper {
+    position: relative;
     display: flex;
-    flex-direction: column;
     flex-grow: 1;
+    flex-direction: column;
     padding-bottom: 77px;
 }
 
@@ -815,10 +829,11 @@ a.catalog-menu {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    min-width: 853px;
+    width: 853px;
     min-height: 70px;
+    margin-right: auto;
+    padding-left: 70px;
     padding-right: 20px;
-    position: relative;
 }
 
 .sort-by::before {
@@ -834,7 +849,6 @@ a.catalog-menu {
 }
 
 .sort-by-header {
-    padding-left: 72px;
     padding-right: 55px;
 }
 
@@ -880,14 +894,17 @@ a.catalog-menu {
 
 .sort-dir {
     display: flex;
-    margin-right: 20px;
     margin-left: auto;
 }
 
 .catalog {
-    display: block;
-    flex-direction: column;
-    padding-left: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 853px;
+    margin-right: auto;
+    padding-right: 20px;
+    padding-left: 72px;
 }
 
 .catalog-list {
