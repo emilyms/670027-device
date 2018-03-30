@@ -72,42 +72,43 @@ a {
 .user-navigation-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 17px 60px 2px;
-    margin-bottom: 30px;
+    padding: 8px 60px 0;
+    margin-bottom: 28px;
 }
 
 .search {
+    display: flex;
+    position: relative;
     width: 440px;
-    padding-bottom: 7px;
-}
-
-.user-navigation, 
-.main-catalog,
-.submenu, 
-.main-menu {
-    list-style: none;
-    margin: 0;
     padding: 0;
 }
 
-.user-navigation {
-    display: flex;
-    justify-content: space-between;
-    width: 540px;
-    margin: 0;
-}
-
-.user-navigation li {
-    margin-left: 35px;
-}
-
-.user-navigation li:first-child {
-    flex-grow: 1;
+.search::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 3px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/search.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .search input[type="search"] {
+    box-sizing: border-box;
     background-color: #f7e296;
     border: none;
+    width: 355px;
+    height: 49px;
+    margin: 0;
+    padding: 0;
+    padding-left: 40px;
+}
+
+.search input[type="search"]:focus {
+    outline: 0;
 }
 
 .search input[type="search"]::-webkit-input-placeholder {
@@ -147,19 +148,67 @@ a {
 }
 
 .search-button {
+    display: none;
+    width: 85px;
+    height: 49px;
     background-color: #f7e296;
     border: 2px solid black;
+    margin: 0;
 }
 
-.search-button:hover {
+.search-button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+}
+
+.search input[type="search"]:focus + .search-button {
+    display: block;
+}
+
+.search input[type="search"]:focus + .search-button:hover,
+.search-button:hover,
+.search-button:focus {
+    display: block;
     background-color: #000000;
     color: #ffffff;
 }
 
+.search input[type="search"]:focus + .search-button:active,
 .search-button:active {
+    display: block;
     background-color: #000000;
     color: rgba(255,255,255, 0.3);
     outline: none;
+}
+
+.user-navigation, 
+.main-catalog,
+.submenu, 
+.main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 540px;
+    margin: 0;
+}
+
+.user-navigation li {
+    margin-left: 35px;
+}
+
+.user-navigation li:first-child {
+    flex-grow: 1;
 }
 
 .user-navigation a, 
@@ -425,13 +474,14 @@ a.catalog-menu {
     position: absolute;
     z-index: 2;
     right: 60px;
-    bottom: 140px;
+    bottom: 145px;
     margin: 0;
     padding: 0;
 }
 
 .promo-slider-controller {
     display: inline-block;
+    vertical-align: middle;
     background: url(../img/slider-button-empty.svg) no-repeat 100%;
     background-size: contain;
     width: 12px;
@@ -502,6 +552,43 @@ a.catalog-menu {
 
 .popular-item:active::after {
     opacity: 0.3;
+}
+
+.popular-item::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    display: block;
+    width: 160px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.vr::after {
+    background-image: url(../img/popular-1.svg);
+}
+
+.monopods::after {
+    background-image: url(../img/popular-2.svg);
+    background-position: bottom;
+}
+
+.action-cameras::after {
+    background-image: url(../img/popular-3.svg);
+}
+
+.fitness-bracelets::after {
+    background-image: url(../img/popular-4.svg);
+}
+
+.smart-watches::after {
+    background-image: url(../img/popular-5.svg);
+}
+
+.quadcopters::after {
+    background-image: url(../img/popular-6.svg);
 }
 
 .popular-item:active span {
