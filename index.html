@@ -63,7 +63,9 @@
                       <ul class="promo-slider-list">
                           <li class="promo-slide" id="promo-slide-item1">
                               <h3 class="visually-hidden">Палка для селфи</h3>
-                              <img width="384" height="486" src="img/promo-slider-1.png" alt="Палка для селфи">
+                              <div class="promo-slide-img">
+                                  <img width="384" height="486" src="img/promo-slider-1.png" alt="Палка для селфи">
+                              </div>
                               <div class="promo-slide-info">
                                   <b class="promo-slider-slogan">Делай селфи, <br> как Бен Стиллер!</b>
                                   <p class="promo-slider-text">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.
@@ -88,7 +90,9 @@
                           </li>
                           <li class="promo-slide" id="promo-slide-item2">
                               <h3 class="visually-hidden">Фитнес-браслет</h3>
-                              <img width="345" height="485" src="img/promo-slider-2.png" alt="Фитнес-браслет">
+                              <div class="promo-slide-img">
+                                <img width="345" height="485" src="img/promo-slider-2.png" alt="Фитнес-браслет">
+                              </div>
                               <div class="promo-slide-info">
                                   <b class="promo-slider-slogan">Худеем <br>правильно!</b>
                                   <p class="promo-slider-text">Мотивирующие фитнес-браслеты помогут найти в себе силы 
@@ -110,7 +114,9 @@
                           </li>
                           <li class="promo-slide" id="promo-slide-item3">
                               <h3 class="visually-hidden">Квадрокоптер с лазером</h3>
-                              <img width="526" height="334" src="img/promo-slider-3.png" alt="Квадрокоптер с лазером">
+                              <div class="promo-slide-img">
+                                <img width="526" height="334" src="img/promo-slider-3.png" alt="Квадрокоптер с лазером">
+                              </div>
                               <div class="promo-slide-info">
                                   <b class="promo-slider-slogan">Порхает как бабочка, <br> жалит как пчела!</b>
                                   <p class="promo-slider-text">Этот обычный, на первый взгляд, квадрокоптер оснащен 
@@ -281,16 +287,16 @@
           <h2 class="visually-hidden">Напишите нам</h2>
           <form class="write-us-form" action="https://echo.htmlacademy.ru" method="post">
               <p class="write-us-item">
-                  <label for="write-us-name">Ваше имя:</label>
+                  <label for="write-us-name">Ваше имя:</label><br>
                   <input id="write-us-name" type="text" name="name" placeholder="Имя Фамилия">
               </p>
               <p class="write-us-item">
-                  <label for="write-us-email">Ваш e-mail:</label>
+                  <label for="write-us-email">Ваш e-mail:</label><br>
                   <input id="write-us-email" type="email" name="email" placeholder="email@example.com">
               </p>
-              <p class="write-us-item">
-                  <label for="write-us-letter">Текст письма</label>
-                  <input id="write-us-letter" type="text" name="letter" placeholder="В свободной форме">
+              <p class="write-us-item letter">
+                  <label for="write-us-letter">Текст письма</label><br>
+                  <textarea class="letter" id="write-us-letter" name="letter" placeholder="В свободной форме"></textarea>
               </p>
               <button class="button" type="submit">Отправить</button>
           </form>
