@@ -783,7 +783,7 @@ a.catalog-menu::after {
     flex-direction: column;
     width: 1160px;
     margin: auto;
-    margin-bottom: 90px;
+    margin-bottom: 93px;
     padding: 0 20px;
 }
 
@@ -819,11 +819,19 @@ a.catalog-menu::after {
     line-height: 48px;
     letter-spacing: 1px;
     color: #000000;
+    margin-top: 57px;
+    margin-bottom: 53px;
+}
+
+.info-wrapper p {
+    margin: 0;
+    margin-bottom: 33px;
+    letter-spacing: 0;
 }
 
 .about-us {
     position: relative;
-    width: 460px;
+    width: 465px;
 }
 
 .about-us::before {
@@ -843,6 +851,8 @@ a.catalog-menu::after {
     color: #000000;
     list-style: none;
     padding: 0;
+    margin-top: 15px;
+    margin-bottom: 70px;
 }
 
 .transport li {
@@ -876,6 +886,12 @@ a.catalog-menu::after {
     width: 80px;
     height: 7px;
     background-color: #000000;
+}
+
+.map {
+    display: block;
+    padding: 0;
+    margin-bottom: 82px;
 }
 
 .page-footer {
@@ -1186,6 +1202,7 @@ a.catalog-menu::after {
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0.5;
+    cursor: pointer;
 }
 
 .modal-close:hover {
@@ -1198,6 +1215,16 @@ a.catalog-menu::after {
 
 .modal-map {
     display: none;
+    position: fixed;
+    z-index: 3;
+    top: calc(50% - 290px);
+    left: calc(50% - 480px);
+    width: 960px;
+    height: 559px;
+    background-image: url(../img/big-map.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 10px 10px 10px rgba(229,229,229, 0.5);
 }
 
 .breadcrumbs-wrapper {
