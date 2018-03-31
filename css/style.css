@@ -187,7 +187,8 @@ a {
     outline: none;
 }
 
-.user-navigation, 
+.user-profile,
+.user-shop,
 .main-catalog,
 .submenu, 
 .main-menu {
@@ -204,12 +205,30 @@ a {
     margin: 0;
 }
 
+.user-profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+.user-shop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
 .user-navigation li {
     margin-left: 35px;
 }
 
 .user-navigation li:first-child {
     flex-grow: 1;
+}
+
+.user-profile li:not(:first-child) {
+    margin-left: 20px;
 }
 
 .user-navigation a, 
@@ -223,6 +242,11 @@ a {
     padding-left: 26px;
 }
 
+.user-profile .logout {
+    opacity: 0.3;
+    padding: 0;
+}
+
 .user-navigation a::before {
     content: "";
     position: absolute;
@@ -233,19 +257,19 @@ a {
     background-position: center;
 }
 
-.user-navigation .login::before {
+.user-profile .login::before {
     width: 13px;
     height: 12px;
     background-image: url(../img/user.svg);
 }
 
-.user-navigation .compare::before {
+.user-shop .compare::before {
     width: 10px;
     height: 10px;
     background-image: url(../img/compare.svg);
 }
 
-.user-navigation .cart::before {
+.user-shop .cart::before {
     width: 12px;
     height: 12px;
     background-image: url(../img/cart.svg);
@@ -255,7 +279,7 @@ a {
     opacity: 0.8;
 }
 
-.user-navigation .login:hover::before {
+.user-profile .login:hover::before {
     opacity: 0.6;
 }
 
@@ -299,10 +323,6 @@ a.catalog-menu::after {
 
 .page-header a:active {
     color: rgba(0,0,0, 0.3);
-}
-
-.logout {
-    opacity: 0.3;
 }
 
 .main-navigation {
@@ -882,7 +902,7 @@ a.catalog-menu::after {
 
 .page-footer-user-navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 0;
     padding: 0;
 }
@@ -893,9 +913,29 @@ a.catalog-menu::after {
 
 .footer-user-navigation {
     display: flex;
+    justify-content: space-between;
+    margin-left: auto;
 }
 
-.footer-user-navigation li {
+.footer-user-profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+}
+
+.footer-user-shop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.footer-user-profile li {
+    padding-left: 20px;
+}
+
+.footer-user-shop li {
     margin-left: 40px;
 }
 
@@ -905,7 +945,7 @@ a.catalog-menu::after {
 }
 
 .footer-user-navigation svg {
-    padding-right: 11px;
+    padding-right: 5px;
 }
 
 .footer-user-navigation a:hover {
