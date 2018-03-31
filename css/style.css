@@ -301,7 +301,7 @@ a.catalog-menu::after {
     color: rgba(0,0,0, 0.3);
 }
 
-.logout a {
+.logout {
     opacity: 0.3;
 }
 
@@ -1412,8 +1412,22 @@ a.catalog-menu::after {
     background-image: url(../img/radio-on.svg);
 }
 
-.filters-item-list input[type="checkbox"]:disabled + label,
-.filters-item-list input[type="radio"]:disabled + label {
+.input-checkbox:hover + label::before,
+.input-radio:hover + label::before {
+    opacity: 0.6;
+}
+
+.input-checkbox:checked:hover + label::before,
+.input-radio:checked:hover + label::before {
+    opacity: 0.6;
+}
+
+.input-checkbox:disabled + label,
+.input-radio:disabled + label,
+.input-checkbox:disabled + label::before,
+.input-radio:disabled + label::before,
+.input-checkbox:disabled:hover + label::before,
+.input-radio:disabled:hover + label::before {
     opacity: 0.25;
 }
 
