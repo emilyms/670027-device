@@ -1272,18 +1272,42 @@ a.catalog-menu::after {
     padding-left: 80px;
 }
 
+.filters-item fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filters-main .filters-item {
+    position: relative;
+    margin-top: 27px;
+    padding-top: 16px;
+}
+
+.filters-item legend {
+    font-family: "Gilroy ExtraBold", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.filters-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+}
+
 .filters label {
     font-size: 14px;
     line-height: 40px;
     color: #000000;
 }
-
-.price label {
-    font-family: "Gilroy ExtraBold", Arial, sans-serif;
-    font-size: 18px;
-    line-height: 24px;
-    color: #000000;
-} 
 
 .range-controls {
     position: relative;
@@ -1338,45 +1362,59 @@ a.catalog-menu::after {
     background-color: transparent;
 }
 
-.filters-main legend {
-    font-family: "Gilroy ExtraBold", Arial, sans-serif;
-    font-size: 18px;
-    line-height: 24px;
-    color: #000000;
+.filters-item-list {
+    list-style: none;
     padding: 0;
-    margin: 0;
 }
 
-.filters-main fieldset {
-    border: none;
-    padding: 0;
+.filters-item-list li {
     margin: 0;
+    padding-left: 40px;
 }
 
-.filters-main .filters-item {
+.filters-item-list label {
     position: relative;
-    margin-top: 27px;
-    padding-top: 16px;
+    display: block;
+    cursor: pointer;
+    user-select: none;
 }
 
-.filters-item::before {
+.input-checkbox + label::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #000000;
+    top: 8px;
+    left: -40px;
+    width: 23px;
+    height: 23px;
+    background-image: url(../img/checkbox-off.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.filters ul,
-.pagination-list {
-    list-style: none;
+.input-checkbox:checked + label::before {
+    width: 27px;
+    background-image: url(../img/checkbox-on.svg);
 }
 
-.filters input[type="checkbox"]:disabled + label,
-.filters input[type="radio"]:disabled + label {
-    color: #a6a6a6;
+.input-radio + label::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -40px;
+    width: 25px;
+    height: 25px;
+    background-image: url(../img/radio-off.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.input-radio:checked + label::before {
+    background-image: url(../img/radio-on.svg);
+}
+
+.filters-item-list input[type="checkbox"]:disabled + label,
+.filters-item-list input[type="radio"]:disabled + label {
+    opacity: 0.25;
 }
 
 .catalog-wrapper {
@@ -1624,6 +1662,7 @@ a.catalog-menu::after {
 }
 
 .pagination-list {
+    list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
