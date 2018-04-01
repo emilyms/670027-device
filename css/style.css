@@ -189,8 +189,6 @@ a {
 
 .user-profile,
 .user-shop,
-.main-catalog,
-.submenu, 
 .main-menu {
     list-style: none;
     margin: 0;
@@ -287,7 +285,51 @@ a {
     opacity: 0.3;
 }
 
-a.catalog-menu {
+.main-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 60px;
+    position: relative;
+}
+
+.submenu-link {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    top: 24px;
+    left: -60px;
+    width: 1160px;
+    min-height: 160px;
+    padding: 24px 60px 30px;
+    background-color: #f7e296;
+}
+
+.submenu-link:hover .submenu {
+    display: flex;
+}
+
+.submenu-part {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.submenu-part:first-child {
+    margin-right: 40px;
+}
+
+.submenu-part a {
+    display: block;
+    line-height: 36px;
+}
+
+.catalog-menu {
     position: relative;
     font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
@@ -297,7 +339,7 @@ a.catalog-menu {
     color: #000000;
 }
 
-a.catalog-menu::after {
+.catalog-menu::after {
     content: "";
     position: absolute;
     top: 3px;
@@ -323,42 +365,6 @@ a.catalog-menu::after {
 
 .page-header a:active {
     color: rgba(0,0,0, 0.3);
-}
-
-.main-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0 60px;
-    position: relative;
-}
-
-.submenu-link {
-    position: relative;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    z-index: 2;
-    top: 24px;
-    left: -60px;
-    width: 1040px;
-    min-height: 98px;
-    padding: 27px 60px 36px;
-    background-color: #f7e296;
-}
-
-.submenu-link:hover .submenu {
-    display: flex;
-}
-
-.submenu-part {
-    min-width: 200px;
-}
-
-.submenu-part:first-child {
-    margin-right: 40px;
 }
 
 .main-menu {
@@ -686,13 +692,16 @@ a.catalog-menu::after {
 
 .services-slider {
     margin: 0;
-    margin-top: 183px;
-    background-color: #e5e5e5;
+    margin-top: 100px;
+    padding-top: 83px;
     min-width: 1200px;
+    min-height: 388px;
+    background: linear-gradient(transparent 100px, #e5e5e5 100px);
 }
 
 .services-wrapper {
     display: flex;
+    justify-content: space-between;
     width: 1160px;
     margin: auto;
     margin-bottom: 105px;
@@ -700,43 +709,62 @@ a.catalog-menu::after {
 }
 
 .services-slider-controls {
-    list-style: none;
-    width: 300px;
-    margin: 0;
-    padding: 0;
-}
-
-.services-slider-controls li {
     position: relative;
-    z-index: 1;
+    list-style: none;
+    flex-basis: 285px;
+    width: 285px;
+    margin: 0;
+    margin-right: auto;
     padding: 0;
-    height: 40px;
-    width: 160px;
 }
 
-.services-slider-controls .button {
+.services-slider-controls::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
     display: block;
-    padding: 0;
-}
-
-.services-slider-controls .button:active {
-    color: #f7e184;
-}
-
-.services-slider-controls .button:active::before {
-    width: 278px;
+    width: 7px;
+    height: 319px;
     background-color: #000000;
 }
 
+.services-slider-controls li {
+    padding: 0;
+    height: 40px;
+    width: 160px;
+    padding-bottom: 20px;
+}
+
+.control-button:active,
+.active {
+    color: #f7e184;
+}
+
+.control-button:active::before,
+.active::before {
+    top: calc(50% - 20px);
+    width: 278px;
+    height: 40px;
+    background-color: #000000;
+    outline: none;
+}
+
 .services-slider-list {
+    flex-basis: 800px;
     width: 800px;
+    padding: 0 40px 0 115px;
+    margin: 0;
 }
 
 .services-slide {
     display: none;
     position: relative;
     flex-direction: column;
-    padding-right: 320px;
+    flex-basis: 435px;
+    width: 435px;
+    margin: 0;
+    padding-right: 250px;
 }
 
 .services-slide::after {
@@ -766,7 +794,7 @@ a.catalog-menu::after {
     background-image: url(../img/credit.svg);
 }
 
-.services-slide:nth-child(3) {
+.services-slide:nth-child(1) {
     display: flex;
 }
 
@@ -775,6 +803,11 @@ a.catalog-menu::after {
     font-size: 47px;
     line-height: 48px;
     color: #000000;
+}
+
+.services-slide p,
+.services-slide h3 {
+    width: 435px;
 }
 
 .main-bottom-wrapper {
@@ -791,7 +824,7 @@ a.catalog-menu::after {
     display: flex;
     justify-content: center;
     margin: 0;
-    padding: ;
+    padding: 0;
 }
 
 .brands-logo-item img {
@@ -1225,6 +1258,12 @@ a.catalog-menu::after {
     background-repeat: no-repeat;
     background-position: center;
     box-shadow: 0 10px 10px 10px rgba(229,229,229, 0.5);
+}
+
+.modal-map iframe {
+    width: 960px;
+    height: 559px;
+    border: 0;
 }
 
 .breadcrumbs-wrapper {
