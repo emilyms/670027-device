@@ -508,12 +508,14 @@ a {
 .button {
     position: relative;
     z-index: 2;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     font-family: "Gilroy ExtraBold", Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
     text-transform: uppercase;
     letter-spacing: 5px;
-    text-align: center;
     color: #000000;
     background-color: transparent;
     border: none;
@@ -594,7 +596,7 @@ a {
     width: 1160px;
     margin: auto;
     padding: 0;
-    margin-top: 107px;
+    margin-top: 87px;
 }
 
 .popular-list {
@@ -863,6 +865,11 @@ a {
     margin: 0;
     margin-bottom: 33px;
     letter-spacing: 0;
+}
+
+.info-wrapper .button {
+    padding: 0;
+    width: 260px;
 }
 
 .about-us {
