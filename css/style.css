@@ -1400,9 +1400,13 @@ a {
     margin: 0;
 }
 
+.filters-main .filters-item:first-of-type {
+    margin-top: 27px;
+}
+
 .filters-main .filters-item {
     position: relative;
-    margin-top: 27px;
+    margin-top: 20px;
     padding-top: 16px;
 }
 
