@@ -692,11 +692,10 @@ a {
 
 .services-slider {
     margin: 0;
-    margin-top: 100px;
-    padding-top: 83px;
+    margin-top: 185px;
     min-width: 1200px;
-    min-height: 388px;
-    background: linear-gradient(transparent 100px, #e5e5e5 100px);
+    min-height: 288px;
+    background-color: #e5e5e5;
 }
 
 .services-wrapper {
@@ -704,29 +703,22 @@ a {
     justify-content: space-between;
     width: 1160px;
     margin: auto;
-    margin-bottom: 105px;
+    margin-bottom: 70px;
     padding: 0 20px;
 }
 
 .services-slider-controls {
+    flex-shrink: 0;
     position: relative;
     list-style: none;
-    flex-basis: 285px;
     width: 285px;
+    min-height: 319px;
+    box-sizing: border-box;
+    border-right: 7px solid #000000;
     margin: 0;
-    margin-right: auto;
     padding: 0;
-}
-
-.services-slider-controls::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: block;
-    width: 7px;
-    height: 319px;
-    background-color: #000000;
+    padding-top: 80px;
+    margin-top: -94px;
 }
 
 .services-slider-controls li {
@@ -734,6 +726,12 @@ a {
     height: 40px;
     width: 160px;
     padding-bottom: 20px;
+}
+
+.control-button {
+    width: 161px;
+    padding: 0;
+    align-items: center;
 }
 
 .control-button:active,
@@ -755,13 +753,13 @@ a {
     width: 800px;
     padding: 0 40px 0 115px;
     margin: 0;
+    margin-top: -25px;
 }
 
 .services-slide {
     display: none;
     position: relative;
     flex-direction: column;
-    flex-basis: 435px;
     width: 435px;
     margin: 0;
     padding-right: 250px;
@@ -770,7 +768,7 @@ a {
 .services-slide::after {
     content: "";
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     background-repeat: no-repeat;
     background-position: center;
@@ -808,6 +806,11 @@ a {
 .services-slide p,
 .services-slide h3 {
     width: 435px;
+    margin: 0;
+}
+
+.services-slide p {
+    margin-top: 37px;
 }
 
 .main-bottom-wrapper {
