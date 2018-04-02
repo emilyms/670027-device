@@ -431,8 +431,7 @@ a {
     margin-left: auto;
 }
 
-.promo-slider-list, 
-.promo-slider-controls, 
+.promo-slider-list,
 .popular-list, 
 .services-slider-list,
 .brands-logo-list {
@@ -485,12 +484,7 @@ a {
             justify-content: space-between;
     position: relative;
     z-index: 2;
-}
-
-.promo-slide:nth-child(1) {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    min-height: 495px;
 }
 
 .promo-slide::after {
@@ -631,7 +625,7 @@ a {
 
 .promo-slider-controls {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     right: 75px;
     bottom: 150px;
     margin: 0;
@@ -650,7 +644,17 @@ a {
     cursor: pointer;
 }
 
-.promo-slider-controller.current {
+.product-1:checked ~ .promo-slider-list .promo-slide:nth-child(1),
+.product-2:checked ~ .promo-slider-list .promo-slide:nth-child(2),
+.product-3:checked ~ .promo-slider-list .promo-slide:nth-child(3) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.product-1:checked ~ .promo-slider-controls label[for="promo-item-1"],
+.product-2:checked ~ .promo-slider-controls label[for="promo-item-2"],
+.product-3:checked ~ .promo-slider-controls label[for="promo-item-3"] {
     background: url(../img/slider-button.svg) no-repeat 100%;
     background-size: contain;
 }
@@ -783,8 +787,8 @@ a {
 .services-slider-controls {
     -ms-flex-negative: 0;
         flex-shrink: 0;
-    position: relative;
     list-style: none;
+    position: relative;
     width: 285px;
     min-height: 319px;
     -webkit-box-sizing: border-box;
@@ -812,17 +816,29 @@ a {
 }
 
 .control-button:active,
-.active {
+.services-slide-1:checked ~ .services-slider-controls label[for="service-1"],
+.services-slide-2:checked ~ .services-slider-controls label[for="service-2"],
+.services-slide-3:checked ~ .services-slider-controls label[for="service-3"] {
     color: #f7e184;
 }
 
 .control-button:active::before,
-.active::before {
+.services-slide-1:checked ~ .services-slider-controls label[for="service-1"]::before,
+.services-slide-2:checked ~ .services-slider-controls label[for="service-2"]::before,
+.services-slide-3:checked ~ .services-slider-controls label[for="service-3"]::before {
     top: calc(50% - 20px);
     width: 278px;
     height: 40px;
     background-color: #000000;
     outline: none;
+}
+
+.services-slide-1:checked ~ .services-slider-list .services-slide:nth-child(1),
+.services-slide-2:checked ~ .services-slider-list .services-slide:nth-child(2),
+.services-slide-3:checked ~ .services-slider-list .services-slide:nth-child(3){
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .services-slider-list {
@@ -871,12 +887,6 @@ a {
     width: 156px;
     height: 188px;
     background-image: url(../img/credit.svg);
-}
-
-.services-slide:nth-child(1) {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
 }
 
 .services-slide a {

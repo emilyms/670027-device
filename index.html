@@ -62,6 +62,14 @@
               <section class="promo-slider">
                   <div class="promo-slider-wrapper">
                       <h2 class="visually-hidden">Промо-слайдер с гаджетами</h2>
+                      <input class="product-1 visually-hidden" type="radio" id="promo-item-1" name="toggle">
+                      <input class="product-2 visually-hidden" type="radio" id="promo-item-2" name="toggle" checked>
+                      <input class="product-3 visually-hidden" type="radio" id="promo-item-3" name="toggle">
+                      <div class="promo-slider-controls">
+                          <label class="promo-slider-controller" for="promo-item-1" aria-label="Первый слайд"></label>
+                          <label class="promo-slider-controller" for="promo-item-2" aria-label="Второй слайд"></label>
+                          <label class="promo-slider-controller" for="promo-item-3" aria-label="Третий слайд"></label>
+                      </div>
                       <ul class="promo-slider-list">
                           <li class="promo-slide" id="promo-slide-item1">
                               <h3 class="visually-hidden">Палка для селфи</h3>
@@ -141,11 +149,6 @@
                               </div>
                           </li>
                       </ul>
-                      <ul class="promo-slider-controls">
-                          <li class="promo-slider-controller current" aria-label="Первый слайд"></li>
-                          <li class="promo-slider-controller" aria-label="Второй слайд"></li>
-                          <li class="promo-slider-controller" aria-label="Третий слайд"></li>
-                      </ul>
                   </div>
              </section>
               <section class="popular">
@@ -187,10 +190,13 @@
           <section class="services-slider">
               <h2 class="visually-hidden">Услуги</h2>
               <div class="services-wrapper">
+                  <input class="services-slide-1 visually-hidden" type="radio" id="service-1" name="services-toggle" checked>
+                  <input class="services-slide-2 visually-hidden" type="radio" id="service-2" name="services-toggle">
+                  <input class="services-slide-3 visually-hidden" type="radio" id="service-3" name="services-toggle">
                   <ul class="services-slider-controls">
-                      <li><button class="button control-button active">Доставка</button></li>
-                      <li><button class="button control-button">Гарантия</button></li>
-                      <li><button class="button control-button">Кредит</button></li>
+                      <li><label class="button control-button" for="service-1">Доставка</label></li>
+                      <li><label class="button control-button" for="service-2">Гарантия</label></li>
+                      <li><label class="button control-button" for="service-3">Кредит</label></li>
                   </ul>
                   <ul class="services-slider-list">
                       <li class="services-slide">
