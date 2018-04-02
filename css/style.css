@@ -934,24 +934,24 @@ a {
     padding-top: 26px;
 }
 
-.brands-logo-item img {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter: gray;
-    opacity: 0.2;
+.brands-logo-item:nth-child(1) img:hover, 
+.brands-logo-item:nth-child(1) img:focus {
+    background-image: url(../img/logo-1.jpg);
 }
 
-.brands-logo-item img:hover, 
-.brands-logo-item img:focus {
-    -webkit-filter: none;
-    -moz-filter: none;
-    -ms-filter: none;
-    -o-filter: none;
-    filter: none;
-    opacity: 1;
+.brands-logo-item:nth-child(2) img:hover,
+.brands-logo-item:nth-child(2) img:focus{
+    background-image: url(../img/logo-2.jpg);
+}
+
+.brands-logo-item:nth-child(3) img:hover,
+.brands-logo-item:nth-child(3) img:focus{
+    background-image: url(../img/logo-3.jpg);
+}
+
+.brands-logo-item:nth-child(4) img:hover,
+.brands-logo-item:nth-child(4) img:focus{
+    background-image: url(../img/logo-4.jpg);
 }
 
 .info-wrapper {
@@ -1341,15 +1341,16 @@ a {
 .write-us-item input[type="text"],
 .write-us-item input[type="email"],
 .write-us-item textarea {
+    box-sizing: border-box;
     background-color: rgba(230,230,230, 0.5);
     border: none;
-    width: 320px;
+    width: 360px;
     min-height: 50px;
     padding: 0 20px;
 }
 
 .write-us-item textarea {
-    width: 720px;
+    width: 760px;
     min-height: 156px;
     padding-top: 20px;
 }
@@ -1364,7 +1365,7 @@ a {
 .write-us-item input[type="email"]:focus,
 .write-us-item textarea:focus {
     background-color: #ffffff;
-    outline-color: rgba(240,197,46, 0.5);
+    outline: 2px solid rgba(240,197,46, 0.5);
 }
 
 .write-us-item input[type="text"]:invalid,
@@ -1382,16 +1383,16 @@ a {
     color: rgba(70,70,70, 0.4);
 }
 
-.write-us-item input[type="text"]::-moz-placeholder,
-.write-us-item input[type="email"]::-moz-placeholder {
+.write-us-item input::-moz-placeholder,
+.write-us-item textarea::-moz-placeholder {
     font-size: 14px;
-    line-height: 18px;
     font-weight: 400;
     color: rgba(70,70,70, 0.4);
 }
 
 .write-us-item input[type="text"]:-ms-input-placeholder,
-.write-us-item input[type="email"]:-ms-input-placeholder {
+.write-us-item input[type="email"]:-ms-input-placeholder,
+.write-us-item textarea:-ms-input-placeholder {
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
@@ -1399,7 +1400,8 @@ a {
 }
 
 .write-us-form .button {
-    margin-right: auto;
+    width: 200px;
+    margin-right: 600px;
     margin-left: 40px;
     padding: 20px;
 }
@@ -1487,6 +1489,7 @@ a {
         transform: translateX(10px);
     }
 }
+
 .modal-show {
     display: block;
     animation: bounce 0.6s;
